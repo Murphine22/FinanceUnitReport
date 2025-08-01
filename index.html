@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIGC Ushering Dept Financial Report 2025</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            'display': ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/jpeg" href="https://i.imgur.com/AJjK1aa.jpeg">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="w-full bg-indigo-900/90 dark:bg-indigo-800/90 shadow-lg py-3 px-4 flex flex-col items-center justify-center sticky top-0 z-50 nav-wide animated-nav">
+    <div class="w-full flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img src="https://i.imgur.com/AJjK1aa.jpeg" alt="Logo" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow" />
+        <span class="text-2xl font-extrabold text-white tracking-wide">DIGC Ushering Dept</span>
+      </div>
+      <!-- Center: Digital Clock (hidden on mobile) -->
+      <div class="hidden sm:block">
+        <span id="navbar-clock" class="clock text-lg font-bold text-indigo-100 dark:text-indigo-200"></span>
+      </div>
+      <!-- Right: Dark Mode & CTA -->
+      <div class="flex items-center gap-4">
+        <!-- Dark Mode Toggle -->
+        <button id="navbar-darkToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-indigo-200 dark:hover:bg-indigo-600 transition-colors toggle-dark" aria-label="Toggle dark mode">
+          <svg id="navbar-darkIcon" class="w-6 h-6 text-indigo-700 dark:text-indigo-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path id="navbar-sun" stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-8.66l-.71.71M4.05 19.07l-.71-.71M21 12h-1M4 12H3m16.24 4.24l-.71-.71M6.34 6.34l-.71-.71M12 7a5 5 0 100 10 5 5 0 000-10z"/>
+          </svg>
+        </button>
+        <!-- Get in Touch Button -->
+        <a href="https://ushapp.vercel.app" target="_blank" rel="noopener" class="ml-2 px-5 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-full shadow font-bold text-base transition">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+    <!-- Marquee Title -->
+    <div class="w-full mt-2 overflow-hidden marquee-outer">
+      <div class="marquee-inner" id="marquee-title">
+        <span class="text-lg sm:text-xl md:text-2xl font-bold text-pink-200 dark:text-pink-300 drop-shadow-lg">
+          Financial Report from Jan to July 2025
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Introduction -->
+  <section class="w-full max-w-3xl mx-auto glass rounded-xl shadow-lg p-4 sm:p-6 mb-4 fade-in-up mt-8">
+    <h2 class="text-lg sm:text-xl font-bold text-indigo-100 dark:text-indigo-200 mb-2">Introduction</h2>
+    <p class="text-gray-100 dark:text-gray-200 text-sm sm:text-base">
+      Welcome to the 2025 Financial Report of the Ushering Department, Dunamis Int'l Gospel Centre. This report provides a transparent, concise, and interactive overview of our financial activities from January to July 2025, highlighting our stewardship, inflows, expenses, and overall financial health. Explore the details, interact with the data, and view our department’s structure below.
+    </p>
+  </section>
+
+  <!-- Organogram -->
+  <section class="w-full max-w-4xl mx-auto mb-10 fade-in-up">
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-indigo-100 dark:text-indigo-200 mb-4 text-center">Financial Organogram</h2>
+    <div class="flex flex-col items-center">
+      <div class="flex flex-wrap justify-center gap-8">
+        <!-- Node 1 -->
+        <div class="org-card glass rounded-2xl px-8 py-6 mb-4 shadow-2xl border-t-8 border-indigo-500 dark:border-indigo-300 text-center w-80 cursor-pointer transition" data-org="brought" tabindex="0">
+          <span class="font-extrabold text-2xl text-indigo-100 dark:text-indigo-200 block mb-1">Amount Brought Forward</span>
+          <div class="text-base text-gray-200 dark:text-gray-300 mb-1">2024 Balance</div>
+          <div id="org-brought" class="dropdown-anim mt-3 text-left text-lg bg-white/80 dark:bg-gray-900/80 rounded-xl shadow p-4 glass">
+            <ul class="list-disc pl-6">
+              <li><span class="font-bold">₦1,282,657</span> carried over from 2024</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Node 2 -->
+        <div class="org-card glass rounded-2xl px-8 py-6 mb-4 shadow-2xl border-t-8 border-green-400 dark:border-green-300 text-center w-80 cursor-pointer transition" data-org="inflow" tabindex="0">
+          <span class="font-extrabold text-2xl text-green-200 dark:text-green-200 block mb-1">Inflow</span>
+          <div class="text-base text-gray-200 dark:text-gray-300 mb-1">Monthly Dues, Contributions, Donations</div>
+          <div id="org-inflow" class="dropdown-anim mt-3 text-left text-lg bg-white/80 dark:bg-gray-900/80 rounded-xl shadow p-4 glass">
+            <ul class="list-disc pl-6">
+              <li><span class="font-bold">₦624,400</span> total inflow for 2025</li>
+              <li>Sources: Monthly dues, member contributions, donations</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Node 3 -->
+        <div class="org-card glass rounded-2xl px-8 py-6 mb-4 shadow-2xl border-t-8 border-blue-400 dark:border-blue-300 text-center w-80 cursor-pointer transition" data-org="available" tabindex="0">
+          <span class="font-extrabold text-2xl text-blue-200 dark:text-blue-200 block mb-1">Total Funds Available</span>
+          <div class="text-base text-gray-200 dark:text-gray-300 mb-1">Cash available in the Account</div>
+          <div id="org-available" class="dropdown-anim mt-3 text-left text-lg bg-white/80 dark:bg-gray-900/80 rounded-xl shadow p-4 glass">
+            <ul class="list-disc pl-6">
+              <li><span class="font-bold">₦1,907,057</span> (Brought forward + Inflow)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-center gap-8 mt-4">
+        <!-- Node 4 -->
+        <div class="org-card glass rounded-2xl px-8 py-6 mb-4 shadow-2xl border-t-8 border-yellow-400 dark:border-yellow-300 text-center w-80 cursor-pointer transition" data-org="outflow" tabindex="0">
+          <span class="font-extrabold text-2xl text-yellow-200 dark:text-yellow-200 block mb-1">Outflow</span>
+          <div class="text-base text-gray-200 dark:text-gray-300 mb-1">Expenses</div>
+          <div id="org-outflow" class="dropdown-anim mt-3 text-left text-lg bg-white/80 dark:bg-gray-900/80 rounded-xl shadow p-4 glass">
+            <ul class="list-disc pl-6">
+              <li><span class="font-bold">₦225,000</span> total expenses</li>
+              <li>Click "Total Expenses" below for breakdown</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Node 5 -->
+        <div class="org-card glass rounded-2xl px-8 py-6 mb-4 shadow-2xl border-t-8 border-indigo-700 dark:border-indigo-300 text-center w-80 cursor-pointer transition" data-org="net" tabindex="0">
+          <span class="font-extrabold text-2xl text-indigo-100 dark:text-indigo-200 block mb-1">Net Balance</span>
+          <div class="text-base text-gray-200 dark:text-gray-300 mb-1">After subtracting expenses</div>
+          <div id="org-net" class="dropdown-anim mt-3 text-left text-lg bg-white/80 dark:bg-gray-900/80 rounded-xl shadow p-4 glass">
+            <ul class="list-disc pl-6">
+              <li><span class="font-bold">₦1,682,057</span> (Total funds available - Expenses)</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Node 6 -->
+        <div class="org-card glass rounded-2xl px-8 py-6 mb-4 shadow-2xl border-t-8 border-pink-400 dark:border-pink-300 text-center w-80 cursor-pointer transition" data-org="others" tabindex="0">
+          <span class="font-extrabold text-2xl text-pink-200 dark:text-pink-200 block mb-1">Others</span>
+          <div class="text-base text-gray-200 dark:text-gray-300 mb-1">Dollar Account & Uniform Donations</div>
+          <div id="org-others" class="dropdown-anim mt-3 text-left text-lg bg-white/80 dark:bg-gray-900/80 rounded-xl shadow p-4 glass">
+            <ul class="list-disc pl-6">
+              <li>Amount in Dollar Account: <span class="font-bold">$500</span></li>
+              <li>Donation for Uniform: <span class="font-bold">₦1,500,000</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie Chart Section -->
+  <section class="w-full max-w-3xl mx-auto mb-10 fade-in-up">
+    <h2 class="text-xl sm:text-2xl font-bold text-indigo-100 dark:text-indigo-200 mb-4 text-center">Financial Overview (Pie Chart)</h2>
+    <div class="bg-white/80 dark:bg-gray-900/80 glass rounded-2xl shadow-2xl p-6 flex flex-col items-center w-full">
+      <div class="pie-chart-container">
+        <canvas id="financePieChart"></canvas>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- Main Report Cards -->
+    <div class="w-full max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 fade-in-up">
+        <!-- Card 1 -->
+        <div class="card-animate glass rounded-xl shadow-lg p-6 flex flex-col items-center border-t-4 border-indigo-500 dark:border-indigo-400">
+          <span class="text-gray-200 dark:text-gray-300 text-sm">Total Brought Forward (2024)</span>
+          <span class="text-2xl font-bold text-indigo-100 dark:text-indigo-200 mt-2">₦1,282,657</span>
+        </div>
+        <!-- Card 2 -->
+        <div class="card-animate glass rounded-xl shadow-lg p-6 flex flex-col items-center border-t-4 border-green-500 dark:border-green-400">
+          <span class="text-gray-200 dark:text-gray-300 text-sm">Inflow (2025)</span>
+          <span class="text-2xl font-bold text-green-200 dark:text-green-200 mt-2">₦624,400</span>
+        </div>
+        <!-- Card 3 -->
+        <div class="card-animate glass rounded-xl shadow-lg p-6 flex flex-col items-center border-t-4 border-yellow-500 dark:border-yellow-400">
+          <span class="text-gray-200 dark:text-gray-300 text-sm">Total Expenses</span>
+          <button id="expensesBtn" class="text-2xl font-bold text-yellow-200 dark:text-yellow-200 mt-2 focus:outline-none hover:underline transition">
+            ₦225,000
+          </button>
+          <!-- Dropdown -->
+          <div id="expensesDropdown" class="dropdown-anim mt-4 w-full bg-white/80 dark:bg-gray-900/80 rounded-lg shadow-lg p-4 text-left text-sm glass">
+            <ul class="space-y-2">
+              <li class="flex justify-between"><span>₦15,000</span> <span>Photoshoot <span class="text-gray-400">(7/13/2025)</span></span></li>
+              <li class="flex justify-between"><span>₦100,000</span> <span>Refreshment for Convention <span class="text-gray-400">(6/8/2025)</span></span></li>
+              <li class="flex justify-between"><span>₦50,000</span> <span>Burial: Bro Isaac Amaka <span class="text-gray-400">(4/25/2025)</span></span></li>
+              <li class="flex justify-between"><span>₦50,000</span> <span>Burial: Sis. Nnaji Nwanneka <span class="text-gray-400">(4/25/2025)</span></span></li>
+              <li class="flex justify-between"><span>₦10,000</span> <span>Repair of Fans <span class="text-gray-400">(3/16/2025)</span></span></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="card-animate glass rounded-xl shadow-lg p-6 flex flex-col items-center border-t-4 border-blue-500 dark:border-blue-400">
+          <span class="text-gray-200 dark:text-gray-300 text-sm">Actual Amount in Bank</span>
+          <span class="text-2xl font-bold text-blue-200 dark:text-blue-200 mt-2">₦1,907,057</span>
+        </div>
+        <!-- Card 5 -->
+        <div class="card-animate glass rounded-xl shadow-lg p-6 flex flex-col items-center border-t-4 border-red-500 dark:border-red-400">
+          <span class="text-gray-200 dark:text-gray-300 text-sm">Deducted Expenses</span>
+          <span class="text-2xl font-bold text-red-200 dark:text-red-200 mt-2">₦225,000</span>
+        </div>
+        <!-- Card 6 -->
+        <div class="card-animate glass rounded-xl shadow-lg p-6 flex flex-col items-center border-t-4 border-indigo-700 dark:border-indigo-300">
+          <span class="text-gray-200 dark:text-gray-300 text-sm">Total Balance</span>
+          <span class="text-2xl font-bold text-indigo-100 dark:text-indigo-200 mt-2">₦1,682,057</span>
+        </div>
+        <!-- Card 7 -->
+        <div class="card-animate glass rounded-xl shadow-lg p-6 flex flex-col items-center border-t-4 border-gray-500 dark:border-gray-400">
+          <span class="text-gray-200 dark:text-gray-300 text-sm">Amount in Dollar Account</span>
+          <span class="text-2xl font-bold text-gray-200 dark:text-gray-200 mt-2">$500</span>
+        </div>
+        <!-- Card 8 -->
+        <div class="card-animate glass rounded-xl shadow-lg p-6 flex flex-col items-center border-t-4 border-pink-500 dark:border-pink-400">
+          <span class="text-gray-200 dark:text-gray-300 text-sm">Donation for Uniform</span>
+          <span class="text-2xl font-bold text-pink-200 dark:text-pink-200 mt-2">₦1,500,000</span>
+        </div>
+      </div>
+    <br><br>
+
+  <!-- Summary -->
+  <section class="w-full max-w-3xl mx-auto glass rounded-xl shadow-lg p-4 sm:p-6 mb-4 fade-in-up">
+    <h2 class="text-lg sm:text-xl font-bold text-indigo-100 dark:text-indigo-200 mb-2">Summary</h2>
+    <p class="text-gray-100 dark:text-gray-200 text-sm sm:text-base">
+      The Ushering Department maintained a strong financial position in the first half of 2025, with a total inflow of ₦624,400 and significant support for departmental needs, including a ₦1,500,000 donation for uniforms. Prudent expense management ensured a healthy balance of ₦1,682,057 as of July 2025, reflecting our commitment to transparency and stewardship.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w-full mt-12 text-center text-base sm:text-lg font-semibold text-indigo-100 dark:text-indigo-200 pb-8 pt-8 bg-indigo-900/90 dark:bg-indigo-800/90 shadow-lg flex flex-col items-center gap-3 footer-wide animated-footer">
+    <div>
+      &copy; 2025 DIGC Ushering Department. All rights reserved.
+    </div>
+    <div>
+      Produced by <span class="font-bold text-pink-300 dark:text-pink-400">Murphine Technology</span>.
+    </div>
+    <a href="https://ushapp.vercel.app" target="_blank" rel="noopener" class="flex items-center gap-2 mt-2 px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-full shadow transition text-lg font-bold">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path stroke="currentColor" stroke-width="2" d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+      </svg>
+      Ushapp Url
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+  
